@@ -67,7 +67,6 @@ if(isset($_POST['submit'])){
       <input type="submit" name="submit" value="register now" class="btn">
       <p>already have an account? <a href="login.php">login now</a></p>
    </form>
-   
 </div>
 </body>
 </html>
