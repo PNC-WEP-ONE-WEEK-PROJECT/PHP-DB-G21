@@ -37,9 +37,20 @@ function getAllPost()
 function getPost($posts_id)
 {
     global $database;
-    $statement=$database->prepare("SELECT * FROM posts where id=:id");
+    $statement=$database->prepare("SELECT * FROM posts where posts_id=:id");
     $statement->execute([
-        ':id'=>$id,
+        ':id'=>$posts_id,
     ]);
     return $statement->fetch();
+}
+// edit post
+function updatePost($Descriptions,$posts_id)
+{
+    global $database;
+    $statment = $database->prepare("UPDATE posts SET  Descriptions=:Descriptions where posts_id = :posts_id");
+    $statment->execute([
+        ':Descriptions'=> $Descriptions,
+        ':posts_id'=> $posts_id,
+
+    ]);
 }
