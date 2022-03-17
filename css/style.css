@@ -9,6 +9,10 @@
    --white:#fff;
    --light-bg:#eee;
    --box-shadow:0 5px 10px rgba(0,0,0,.1);
+   --blues:#89c3eb;
+}
+body{
+   background-color: #c7e0f1;
 }
 section{
    width: 40%;
@@ -24,50 +28,78 @@ section .card2{
    display: flex;
 }
 
+
+
+/* display form */
+.container{
+   width: 60%;
+}
+
+.displayPost {
+   background-color: var(--white);
+}
+
+
+img{
+   width: 100%;
+}
+.btn_post {
+   background-color: #3498db;
+   border-radius: 5px;
+   border: none;
+   margin-left: 40px;
+}
+
+.file {
+   background-color: #3498db;
+   border-radius: 5px;
+   border: none;
+
+}
+.inputfile{
+   display: flex;
+   margin-left: 350px;
+}
+.card1{
+   display: flex;
+   justify-content: space-between;
+margin-top: 0ch;   color: var(--blue);
+   width: 100%;
+}
+.img{
+   width: 80%;
+   margin: auto;
+}
+h3{
+   font-size: 4rem;
+   margin-top: auto;
+}
+
+
+
 section .card1 .img1{
    width: 10%;
 }
-section .card2 .img2{
+section .fa{
    padding-top: 50px;
    border-radius:100%;
    width: 15%;
    
 }
 .card2 p{
-   margin-top:90px;
    font-family: sans-ser;
 }
+.card2{
+   display:flex;
 
+}
+.fa{
+   font-size: 5rem;
+}
+.p{
+   justify-content: flex-end;
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+}
 
 .form-group{
    min-height: 5vh;
@@ -128,4 +160,3 @@ section .card2 .img2{
 .form-container form p a:hover{
    text-decoration: underline;
 }
-
