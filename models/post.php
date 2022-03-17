@@ -1,20 +1,21 @@
+<!-------------------------------------------Function------------------------------------------------ -->
+
 <?php
-/**
- * Your code here
- */
 require_once 'database.php';
 
-function createPost($post,$user_id)
+// Function CreatePost
+function createPost($post,$user_id,$images)
 {
     global $database;
 
-    $statement=$database->prepare("INSERT INTO posts(Descriptions,users_id) values(:text,:user_id)");
+    $statement=$database->prepare("INSERT INTO posts(Descriptions,users_id,image) values(:text,:user_id,:image)");
     $statement->execute([
-        ':text'=> $post,':user_id'=>$user_id
+        ':text'=> $post,':user_id'=>$user_id,':image'=>$images
     ]);
     return $statement->fetch();
 }
 
+// Function DeletePost
 function deletePost($posts_id)
 {
     global $database;
@@ -25,6 +26,7 @@ function deletePost($posts_id)
     return $statement->fetch();
 }
 
+// Function GetAllPosts
 function getAllPost()
 {
     global $database;
@@ -34,12 +36,24 @@ function getAllPost()
 
 }
 
+// Function GetPost
 function getPost($posts_id)
 {
     global $database;
-    $statement=$database->prepare("SELECT * FROM posts where id=:id");
+    $statement=$database->prepare("SELECT * FROM posts where posts_id=:id");
     $statement->execute([
-        ':id'=>$id,
+        ':id'=>$posts_id,
     ]);
     return $statement->fetch();
+}
+// edit post
+function updatePost($Descriptions,$posts_id)
+{
+    global $database;
+    $statment = $database->prepare("UPDATE posts SET  Descriptions=:Descriptions where posts_id = :posts_id");
+    $statment->execute([
+        ':Descriptions'=> $Descriptions,
+        ':posts_id'=> $posts_id,
+
+    ]);
 }

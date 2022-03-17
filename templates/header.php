@@ -8,5 +8,17 @@
     <!-- Your style here -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../css/style.css">
 </head>
 <body>
+<section class="img">
+    <div class="card1">
+        <img class="img1" src="../images/logofacebook.png" alt="">
+    </div>
+    <div class="card2">
+        <img class="img2" src="../images/default-avatar.png" alt="">
+        <p>Mr willSmith</p>
+    </div>
+</section>
+        
+
