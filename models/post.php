@@ -47,13 +47,13 @@ function getPost($posts_id)
     return $statement->fetch();
 }
 // edit post
-function updatePost($Descriptions,$posts_id)
+function updatePost($Descriptions,$posts_id,$image)
 {
     global $database;
-    $statment = $database->prepare("UPDATE posts SET  Descriptions=:Descriptions where posts_id = :posts_id");
+    $statment = $database->prepare("UPDATE posts SET  Descriptions=:Descriptions, image =:image where posts_id = :posts_id");
     $statment->execute([
         ':Descriptions'=> $Descriptions,
         ':posts_id'=> $posts_id,
-
+        ':image'=> $image,
     ]);
 }

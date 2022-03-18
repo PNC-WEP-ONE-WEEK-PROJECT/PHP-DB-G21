@@ -3,6 +3,7 @@
 <div class="container p-4">
     <?php
     require_once '../models/post.php';
+    $image=$_POST['image'];
     $posts_id=$_GET['id'];
     $Descriptions=getPost($posts_id);
     ?>
