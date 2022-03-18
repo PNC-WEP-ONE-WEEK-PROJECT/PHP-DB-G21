@@ -36,7 +36,7 @@ error_reporting(0);
   }
 
 ?>
-
+                                            
 <!-- --------------------------------------------Delete and ADDPost ---------------------------------------------------------------------->
 
 <?php
@@ -70,11 +70,18 @@ if($_SERVER['REQUEST_METHOD']=='POST')
             <div class="image-control">
                 <img src="./images/<?= $post['image'] ?>"  alt="">
             </div>
+<<<<<<< HEAD
             <div class="card-footer d-flex justify-content-end">
                 <a href="views/edit_view.php?id=<?=$post['posts_id']?>" class="card-link btn btn-primary d-flex justify-content-end">Edit</a>
                 <a href="controllers/delete_post.php?id=<?= $post['posts_id'] ?>" class="btn btn-danger d-flex justify-content-end card-link">Delete</a>
                 <a href="views/comment_view.php?id=<?= $post['posts_id'] ?>" class="card-link btn btn-primary">Comment</a>
                
+=======
+                <div class="card-footer d-flex justify-content-end">
+                <a href="views/edit_view.php?id=<?=$post['posts_id']?>" class="card-link btn btn-primary d-flex justify-content-end">edit</a>
+                <a href="controllers/delete_post.php?id=<?= $post['posts_id'] ?>" class="btn btn-danger d-flex justify-content-end card-link">delete</a>
+                <button type="submit" class="btn btn-primary d-flex justify-content-end">Comment</button>
+>>>>>>> 8872f8f1c3e1c5d0ab172305c9bc7caa49b0c86b
             </div>
         </div>
     </div>
