@@ -7,9 +7,6 @@
             <input type="file" name="uploadfile" value=""/>
             <button type="submit" name="upload">ADD POST</button>
         </div>
-        
-           
-
         <div class="">
             <textarea name="text" class="form-control" placeholder="Text" ></textarea>
         </div>
@@ -46,7 +43,7 @@ error_reporting(0);
 require_once ('models/post.php');
 if($_SERVER['REQUEST_METHOD']=='POST')
 {
-    
+
     if(!empty($_POST['text']))
     {
         $post=$_POST['text'];
@@ -70,9 +67,9 @@ if($_SERVER['REQUEST_METHOD']=='POST')
                 <img src="./images/<?= $post['image'] ?>"  alt="">
             </div>
             <div class="card-footer d-flex justify-content-end">
-            <a href="views/edit_view.php?id=<?=$post['posts_id']?>" class="card-link">edit</a>
+                <a href="views/edit_view.php?id=<?=$post['posts_id']?>" class="card-link">Edit</a>
                 <a href="controllers/delete_post.php?id=<?= $post['posts_id'] ?>" class="card-link">delete</a>
-                <button type="submit" class="btn btn-primary d-flex justify-content-end">Comment</button>
+                <a href="views/comment_view.php?id=<?= $post['posts_id'] ?>" class="card-link">Comment</a>
             </div>
         </div>
     </div>

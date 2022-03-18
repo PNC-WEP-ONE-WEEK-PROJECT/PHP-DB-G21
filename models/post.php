@@ -14,16 +14,29 @@ function createPost($post,$user_id,$images)
     ]);
     return $statement->fetch();
 }
+// add comment
+function addComment($user_id,$posts_id,$comment)
+{   
+    global $database;
+    $statement=$database->prepare("INSERT INTO comments(content,users_id,posts_id) values(:text,:user_id,:post_id)");
+    $statement->execute([
+        ':text' =>$comment,':user_id'=>$user_id,':post_id'=>$posts_id
+    ]);
+    return $statement->fetch();
+
+}
+
 
 // Function DeletePost
 function deletePost($posts_id)
 {
     global $database;
-    $statement=$database->prepare("DELETE FROM posts where posts_id=:id");
-    $statement->execute([
+    $statement=$database->prepare("DELETE FROM posts WHERE posts_id=:id");
+    $statement->execute([   
         ':id'=>$posts_id
     ]);
     return $statement->fetch();
+    
 }
 
 // Function GetAllPosts
@@ -57,3 +70,4 @@ function updatePost($Descriptions,$posts_id)
 
     ]);
 }
+
