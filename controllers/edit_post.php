@@ -3,11 +3,11 @@ if($_SERVER['REQUEST_METHOD'] == 'POST')
 {
     $posts_id=$_POST['posts_id'];
     $Descriptions=$_POST['Descriptions'];
-    $image=$_POST['image'];
-    if(!empty($Descriptions) and !empty($posts_id)and !empty($image)) 
+    $filename = $_POST["uploadfile"];
+    if(!empty($Descriptions)and !empty($filename)) 
     {
-        updatePost($Descriptions,$posts_id,$image);
-        header('location:../index.php');
+        updatePost($Descriptions,$posts_id,$filename);
+        header('location:../index.php');   
     }
 }
 ?>

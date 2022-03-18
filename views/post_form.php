@@ -37,7 +37,7 @@ error_reporting(0);
   }
 
 ?>
-
+                                            
 <!-- --------------------------------------------Delete and ADDPost ---------------------------------------------------------------------->
 
 <?php
@@ -71,8 +71,8 @@ if($_SERVER['REQUEST_METHOD']=='POST')
             <div class="image-control">
                 <img src="./images/<?= $post['image'] ?>"  alt="">
             </div>
-            <div class="card-footer d-flex justify-content-end">
-            <a href="views/edit_view.php?id=<?=$post['posts_id']?>" class="card-link btn btn-primary d-flex justify-content-end">edit</a>
+                <div class="card-footer d-flex justify-content-end">
+                <a href="views/edit_view.php?id=<?=$post['posts_id']?>" class="card-link btn btn-primary d-flex justify-content-end">edit</a>
                 <a href="controllers/delete_post.php?id=<?= $post['posts_id'] ?>" class="btn btn-danger d-flex justify-content-end card-link">delete</a>
                 <button type="submit" class="btn btn-primary d-flex justify-content-end">Comment</button>
             </div>
