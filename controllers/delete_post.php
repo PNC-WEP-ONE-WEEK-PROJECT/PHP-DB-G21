@@ -1,7 +1,5 @@
 <?php
-/**
- * Your code here
- */
+
 require_once '../models/post.php';
 
 $id= null;
@@ -10,5 +8,5 @@ if ($id !=null)
 {
     echo $id;       
     deletePost($id);
-    // header('location: ../index.php');
+    header('location: ../index.php');
 }

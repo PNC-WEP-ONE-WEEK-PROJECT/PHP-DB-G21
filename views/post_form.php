@@ -1,18 +1,18 @@
 
 <!---------------------------------------------- Form ----------------------------------------------------------------------------------->
 <div class="container mt-5">
-    <form action="#"  method="post" enctype="multipart/form-data">
+    <form action="#"  method="post" class="displayPost" enctype="multipart/form-data">
 
         <div class="inputfile">
-            <input type="file" name="uploadfile" value=""/>
-            <button type="submit" name="upload">ADD POST</button>
+            <input type="file" class="file" name="uploadfile" value="">
+            <button type="submit" class="btn_post" name="upload">ADD POST</button>
+            <input type="hidden" class="form-control"  name="id" value="<?=$comment['posts_id'] ?>">
         </div>
         <div class="">
-            <textarea name="text" class="form-control" placeholder="Text" ></textarea>
+            <textarea name="text" class="form-control" placeholder="Text"  ></textarea>
         </div>
     </form>
 </div>
-
 <!-- -----------------------------------------Upload Images--------------------------------------------------------------------------- -->
 <?php
 error_reporting(0);
@@ -60,6 +60,10 @@ if($_SERVER['REQUEST_METHOD']=='POST')
         // For loop
         foreach($posts as $post):
     ?>
+    <div class="card2">
+        <i class="fa fa-user-circle-o"></i>
+        <p class="p">Mr willSmith</p>
+    </div>
     <div class="card">
         <div class="card-body">
             <p class="card-text"><?= $post['Descriptions']?></p>
@@ -67,9 +71,10 @@ if($_SERVER['REQUEST_METHOD']=='POST')
                 <img src="./images/<?= $post['image'] ?>"  alt="">
             </div>
             <div class="card-footer d-flex justify-content-end">
-                <a href="views/edit_view.php?id=<?=$post['posts_id']?>" class="card-link">Edit</a>
-                <a href="controllers/delete_post.php?id=<?= $post['posts_id'] ?>" class="card-link">delete</a>
-                <a href="views/comment_view.php?id=<?= $post['posts_id'] ?>" class="card-link">Comment</a>
+                <a href="views/edit_view.php?id=<?=$post['posts_id']?>" class="card-link btn btn-primary d-flex justify-content-end">Edit</a>
+                <a href="controllers/delete_post.php?id=<?= $post['posts_id'] ?>" class="btn btn-danger d-flex justify-content-end card-link">Delete</a>
+                <a href="views/comment_view.php?id=<?= $post['posts_id'] ?>" class="card-link btn btn-primary">Comment</a>
+               
             </div>
         </div>
     </div>

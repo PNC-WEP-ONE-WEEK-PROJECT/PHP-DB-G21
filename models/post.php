@@ -23,13 +23,22 @@ function addComment($user_id,$posts_id,$comment)
         ':text' =>$comment,':user_id'=>$user_id,':post_id'=>$posts_id
     ]);
     return $statement->fetch();
-
 }
-
+// get comments
+function getcommts($posts_id)
+{
+    global $database;
+    $statement=$database->prepare("SELECT * FROM comments where posts_id=:id");
+    $statement->execute([
+        ':id'=>$posts_id,
+    ]);
+    return $statement->fetch();
+}
 
 // Function DeletePost
 function deletePost($posts_id)
 {
+    // echo $posts_id;
     global $database;
     $statement=$database->prepare("DELETE FROM posts WHERE posts_id=:id");
     $statement->execute([   
@@ -38,6 +47,8 @@ function deletePost($posts_id)
     return $statement->fetch();
     
 }
+
+
 
 // Function GetAllPosts
 function getAllPost()
@@ -67,7 +78,6 @@ function updatePost($Descriptions,$posts_id)
     $statment->execute([
         ':Descriptions'=> $Descriptions,
         ':posts_id'=> $posts_id,
-
     ]);
 }
 
