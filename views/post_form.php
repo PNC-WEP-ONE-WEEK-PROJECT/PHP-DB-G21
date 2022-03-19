@@ -6,11 +6,13 @@
         <div class="inputfile">
             <input type="file" class="file" name="uploadfile" value="">
             <button type="submit" class="btn_post" name="upload">ADD POST</button>
+
             <input type="hidden" class="form-control"  name="id" value="<?=$comment['posts_id'] ?>">
 
         </div>
         <div class="">
-            <textarea name="text" class="form-control" placeholder="Text"  ></textarea>
+        <textarea name="text" class="form-control" placeholder="Text"  ></textarea>
+            
         </div>
     </form>
 </div>

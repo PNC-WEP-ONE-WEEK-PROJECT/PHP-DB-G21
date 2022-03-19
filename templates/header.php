@@ -16,8 +16,15 @@
 <section class="img">
     <div class="card1">
         <i class="fa fa-facebook-square"></i>
-        <h3>PNC Facebook</h3>
+        <h3>Facebook</h3>
     </div>
-    
 </section>
+<div class="input-group">
+        <div class="form-outline">
+            <input type="search" class="form-control" placeholder="search" </button>
+        </div>
+            <button type="button" class="btn-primary-search">
+                <i class="fa fa-search"></i>
+            </button>
+    </div>
 
