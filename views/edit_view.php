@@ -5,10 +5,6 @@
     require_once '../models/post.php';
     $posts_id=$_GET['id'];
     $Descriptions=getPost($posts_id);
-    isset($_GET['id'])? $posts_id=$_GET['id']: $posts_id= null;
-        if($posts_id!=null){
-            $Descriptions=getPost($posts_id);
-    }
     ?>
     <form action="../controllers/edit_post.php" method="post">
         <input type="file" class="file" name="uploadfile" value="">
@@ -17,7 +13,7 @@
             <input type="text" class="form-control" value="<?=$Descriptions['Descriptions']?>" name="Descriptions">
         </div>
         <div class="form-group">
-            <button type="submit" class="btn btn-primary btn-block">Change</button>
+            <button type="submit" class="btn btn-primary btn-block">update</button>
         </div>
     </form>
 </div>

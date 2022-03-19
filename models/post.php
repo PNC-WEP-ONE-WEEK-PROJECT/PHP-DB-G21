@@ -23,14 +23,26 @@ function addComment($user_id,$posts_id,$comment)
         ':text' =>$comment,':user_id'=>$user_id,':post_id'=>$posts_id
     ]);
     return $statement->fetch();
+
 }
 // get comments
-function getcommts($posts_id)
+function getcommts($postID)
 {
     global $database;
-    $statement=$database->prepare("SELECT * FROM comments where posts_id=:id");
-    $statement->execute([
-        ':id'=>$posts_id,
+    $statement=$database->prepare("SELECT * FROM comments WHERE posts_id=:id");
+    $statement->execute(
+        [":id"=>$postID]
+    );
+    return $statement->fetchAll();
+}
+// Delete comments
+function deletecmt($user_id)
+{
+    // echo $posts_id;
+    global $database;
+    $statement=$database->prepare("DELETE FROM comments WHERE $user_id=:id");
+    $statement->execute([   
+        ':id'=>$user_id
     ]);
     return $statement->fetch();
 }
@@ -71,7 +83,6 @@ function getPost($posts_id)
     return $statement->fetch();
 }
 // edit post
-<<<<<<< HEAD
 function updatePost($Descriptions,$posts_id)
 {
     global $database;
@@ -79,16 +90,6 @@ function updatePost($Descriptions,$posts_id)
     $statment->execute([
         ':Descriptions'=> $Descriptions,
         ':posts_id'=> $posts_id,
-=======
-function updatePost($Descriptions,$posts_id,$filename)
-{
-    global $database;
-    $statment = $database->prepare("UPDATE posts SET  Descriptions=:Descriptions, image =:filename where posts_id = :posts_id");
-    $statment->execute([
-        ':Descriptions'=> $Descriptions,
-        ':posts_id'=> $posts_id,
-        ':filename'=> $filename,
->>>>>>> 8872f8f1c3e1c5d0ab172305c9bc7caa49b0c86b
     ]);
 }
 
