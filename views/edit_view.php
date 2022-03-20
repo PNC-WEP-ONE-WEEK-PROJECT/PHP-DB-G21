@@ -13,8 +13,8 @@
             <input type="text" class="form-control" value="<?=$Descriptions['Descriptions']?>" name="Descriptions">
         </div>
         <div class="form-group">
-            <button type="submit" class="btn btn-primary btn-block">update</button>
-        </div>
+            <button type="submit" class="btn btn-primary btn-block">edit</button>
+        </div>     
     </form>
 </div>
 <?php require_once '../templates/footer.php'; ?>

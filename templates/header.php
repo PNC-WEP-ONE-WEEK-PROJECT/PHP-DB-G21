@@ -16,15 +16,12 @@
 <section class="img">
     <div class="card1">
         <i class="fa fa-facebook-square"></i>
+        <div class="active-pink-3 active-pink-4 mb-4">
+            <input class="form-control" type="text" placeholder="Search" aria-label="Search">
+        </div>
         <h3>Facebook</h3>
     </div>
 </section>
-<div class="input-group">
-        <div class="form-outline">
-            <input type="search" class="form-control" placeholder="search" </button>
-        </div>
-            <button type="button" class="btn-primary-search">
-                <i class="fa fa-search"></i>
-            </button>
-    </div>
+<!-- Search form -->
+
 

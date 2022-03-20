@@ -1,5 +1,5 @@
+<!-----------------------------------------------Delete comment on Post---------------------------------------->
 <?php
-
 require_once '../models/post.php';
 
 $id= null;

@@ -1,4 +1,3 @@
-
 <!---------------------------------------------- Form ----------------------------------------------------------------------------------->
 <div class="container mt-5">
     <form action="#"  method="post" class="displayPost" enctype="multipart/form-data">
@@ -6,13 +5,10 @@
         <div class="inputfile">
             <input type="file" class="file" name="uploadfile" value="">
             <button type="submit" class="btn_post" name="upload">ADD POST</button>
-
             <input type="hidden" class="form-control"  name="id" value="<?=$comment['posts_id'] ?>">
-
         </div>
         <div class="">
-        <textarea name="text" class="form-control" placeholder="Text"  ></textarea>
-            
+            <textarea name="text" class="form-control" placeholder="Text"  ></textarea>
         </div>
     </form>
 </div>
@@ -22,7 +18,7 @@ error_reporting(0);
 ?>
 <?php
   $msg = "";
-  // If upload button is clicked ...
+// If upload button is clicked ...
   if (isset($_POST['upload'])) {
 
     $filename = $_FILES["uploadfile"]["name"];
@@ -30,7 +26,7 @@ error_reporting(0);
     $folder = "images/".$filename;
 
   
-        // Now let's move the uploaded image into the folder: image
+// Now let's move the uploaded image into the folder: image
         if (move_uploaded_file($tempname, $folder)) {
             $msg = "Image uploaded successfully";
         }else{
@@ -51,7 +47,7 @@ if($_SERVER['REQUEST_METHOD']=='POST')
     {
         $post=$_POST['text'];
 
-    // Call function CreatePost
+// Call function CreatePost
         createPost($post,1,$filename);
     }
 }
@@ -59,22 +55,21 @@ if($_SERVER['REQUEST_METHOD']=='POST')
 <div class="container">
     <?php
         $posts=getAllPost();
-        
-        // For loop
+// For loop
         foreach($posts as $post):
     ?>
-    <!-- profile user -->
+<!------------------------------------------- profile user-------------------------------------------- -->
     <div class="card2">
         <i class="fa fa-user-circle-o"></i>
         <p class="p">Mr willSmith</p>
     </div>
-
     <div class="card">
         <div class="card-body">
             <p class="card-text"><?= $post['Descriptions']?></p>
             <div class="image-control">
-                <img src="./images/<?= $post['image'] ?>"  alt="">
-            </div>
+                <img src="../images/<?= $post['image'] ?>"  alt="">
+            </div>\
+<!----------------------------------- Get Comment,Edit,Delete on post -------------------------------------------------------------->
             <div class="card-footer d-flex justify-content-end">
                 <a href="views/edit_view.php?id=<?=$post['posts_id']?>" class="card-link btn btn-primary d-flex justify-content-end">Edit</a>
                 <a href="controllers/delete_post.php?id=<?= $post['posts_id'] ?>" class="btn btn-danger d-flex justify-content-end card-link">Delete</a>
@@ -84,14 +79,15 @@ if($_SERVER['REQUEST_METHOD']=='POST')
     <div class="card-footer">
         <?php
         $comments=getcommts($post['posts_id']);
-    // For loop on comment
+// For loop on comment
         foreach($comments as  $comment):
          ?>
-    <!-- Display comments -->
+<!--------------------------------------------- Get Delete,Edit on Comment -------------------------------------------------------->
             <div class="card-cmt">
-                <?php echo $comment['content'] ?>
-        <a href="controllers/delete_cmt.php?id=<?= $post['posts_id'] ?>" class="card-link btn btn-primary">Delete</a>
-        </div>
+                <?php echo $comment['content']?>
+                <a href="controllers/delete_cmt.php?id=<?= $comment['comments_id'] ?>" class="card-link btn btn-primary">Delete</a>
+                <a href="views/editcmt_view.php?id=<?=$comment['comments_id'] ?>" class="card-link btn btn-primary">Edit</a>
+            </div>      
             <?php endforeach;?>
         </div>
     </div>
