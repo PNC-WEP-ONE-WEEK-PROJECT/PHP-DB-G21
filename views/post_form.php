@@ -68,7 +68,7 @@ if($_SERVER['REQUEST_METHOD']=='POST')
             <p class="card-text"><?= $post['Descriptions']?></p>
             <div class="image-control">
                 <img src="../images/<?= $post['image'] ?>"  alt="">
-            </div>\
+            </div>
 <!----------------------------------- Get Comment,Edit,Delete on post -------------------------------------------------------------->
             <div class="card-footer d-flex justify-content-end">
                 <a href="views/edit_view.php?id=<?=$post['posts_id']?>" class="card-link btn btn-primary d-flex justify-content-end">Edit</a>
