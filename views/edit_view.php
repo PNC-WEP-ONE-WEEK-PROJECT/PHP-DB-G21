@@ -10,11 +10,11 @@
         <input type="file" class="file" name="uploadfile" value="">
         <input type="hidden" value="<?=$posts_id?>" name="posts_id">
         <div class="form-group">
-            <input type="text" class="form-control" value="<?=$Descriptions['Descriptions']?>" name="Descriptions">
+            <input type="text" class="form-control editpost" value="<?=$Descriptions['Descriptions']?>" name="Descriptions">
         </div>
         <div class="form-group">
-            <button type="submit" class="btn btn-primary btn-block">edit</button>
-        </div>     
+            <button type="submit" class="btn btn-primary btn-block editbtn">edit</button>
+        </div>
     </form>
 </div>
 <?php require_once '../templates/footer.php'; ?>
