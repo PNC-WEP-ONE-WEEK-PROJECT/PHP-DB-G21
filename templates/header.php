@@ -16,9 +16,7 @@
 <section class="img">
     <div class="card1">
         <i class="fa fa-facebook-square"></i>
-        <div class="active-pink-3 active-pink-4 mb-4">
-            <input class="form-control" type="text" placeholder="Search" aria-label="Search">
-        </div>
+        <input class="form-control btnSearch" type="text" placeholder="Search" aria-label="Search">
         <h3>Facebook</h3>
     </div>
 </section>

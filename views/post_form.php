@@ -34,8 +34,7 @@ error_reporting(0);
       }
   }
 
-?>
-                                            
+?>                                 
 <!-- -------------------------------------------AddPost - Comment - DeletePost  ---------------------------------------------------------------------->
 
 <?php
@@ -67,7 +66,7 @@ if($_SERVER['REQUEST_METHOD']=='POST')
         <div class="card-body">
             <p class="card-text"><?= $post['Descriptions']?></p>
             <div class="image-control">
-                <img src="../images/<?= $post['image'] ?>"  alt="">
+                <img class='imgpost' src="../images/<?= $post['image'] ?>"  alt="">
             </div>
 <!----------------------------------- Get Comment,Edit,Delete on post -------------------------------------------------------------->
             <div class="card-footer d-flex justify-content-end">
@@ -83,10 +82,12 @@ if($_SERVER['REQUEST_METHOD']=='POST')
         foreach($comments as  $comment):
          ?>
 <!--------------------------------------------- Get Delete,Edit on Comment -------------------------------------------------------->
-            <div class="card-cmt">
-                <?php echo $comment['content']?>
-                <a href="controllers/delete_cmt.php?id=<?= $comment['comments_id'] ?>" class="card-link btn btn-primary">Delete</a>
-                <a href="views/editcmt_view.php?id=<?=$comment['comments_id'] ?>" class="card-link btn btn-primary">Edit</a>
+            <div class="card-cmt ">
+                <div class="com">
+                    <?php echo $comment['content']?>
+                    <a href="controllers/delete_cmt.php?id=<?= $comment['comments_id'] ?>"><img class='pic' src="../images/download.jpg" alt=""></a>
+                    <a href="views/editcmt_view.php?id=<?=$comment['comments_id'] ?>"><img class ='pic'src="../images/edit.png" alt=""></a>
+                </div>
             </div>      
             <?php endforeach;?>
         </div>

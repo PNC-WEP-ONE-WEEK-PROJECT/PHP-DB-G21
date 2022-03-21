@@ -8,8 +8,8 @@
     $content=getPost($posts_id);
     ?>
     <form action="../controllers/comment_post.php" method="post">
-        <div class="form-group">
-            <input type="text" class="form-control"  name="content">
+        <div class="form-group btnedit">
+            <input type="text" class="form-control " placeholder='comment..'  name="content">
             <input type="hidden" class="form-control"  name="id" value="<?php echo $content['posts_id'] ?>">
         </div>
         <div class="display-cmt">
