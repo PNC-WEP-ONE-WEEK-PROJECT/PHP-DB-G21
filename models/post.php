@@ -54,7 +54,6 @@ function deletecmt($comment_id)
     ]);
     
 }
-
 // Function DeletePost
 function deletePost($posts_id)
 {

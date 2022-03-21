@@ -14,19 +14,16 @@ if(isset($_POST['submit'])){
 ?>
 <!-- custom css file link  -->
 <link rel="stylesheet" href="css/style.css">
-
 </head>
 <body>
 <div class="form-container">
-
-   <form action="" method="post" enctype="multipart/form-data">
+   <form action="index.php" method="post" enctype="multipart/form-data">
       <h3>login now</h3>
       <?php
       ?>
       <input type="email" name="email" placeholder="enter email" class="box" required>
       <input type="password" name="password" placeholder="enter password" class="box" required>
       <input type="submit" name="submit" value="login now" class="btn">
-      <p>don't have an account? <a href="register.php">regiser now</a></p>
+      <p>don't have an account?<a href="register.php">regiser now</a></p>
    </form>
-
 </div>

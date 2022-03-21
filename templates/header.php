@@ -13,13 +13,7 @@
     <!-- <link rel="stylesheet" href="style/style.css"> -->
 </head>
 <body>
-<section class="img">
-    <div class="card1">
-        <i class="fa fa-facebook-square"></i>
-        <input class="form-control btnSearch" type="text" placeholder="Search" aria-label="Search">
-        <h3>Facebook</h3>
-    </div>
-</section>
+
 <!-- Search form -->
 
 
